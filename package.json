@@ -1,0 +1,12 @@
+{
+  "name": "frontend-deployment",
+  "version": "0.0.0",
+  "private": true,
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "scripts": {
+    "postinstall": "cd app/assets && npm install"
+  },
+  "author": "Neighborly Corporation"
+}
