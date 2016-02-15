@@ -23,7 +23,7 @@ module Resta
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     if Rails.env.production?
-      config.react.server_renderer = React::Rails::ServerRendering::StaticFilesRenderer
+      config.react.server_renderer = React::ServerRendering::StaticFilesRenderer
       config.react.server_renderer_options = {
         files: [ActionView::Base.new.asset_path("webpack.bundle.js")]
       }
