@@ -1,0 +1,2 @@
+web: rails s -p 3004
+webpack: webpack --config app/assets/webpack.config.js --watch
