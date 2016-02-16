@@ -14,6 +14,9 @@ function* incrementAsync() {
   yield put({ type: 'INCREMENT_COUNTER' })
 }
 
+
+
+
 // Our watcher Saga: spawn a new incrementAsync task on each INCREMENT_ASYNC
 export function* watchIncrementAsync() {
   yield* takeEvery('INCREMENT_ASYNC', incrementAsync)

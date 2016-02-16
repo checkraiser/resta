@@ -1,7 +1,7 @@
 export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
 export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
 export const SET_COUNTER = 'SET_COUNTER';
-
+export const INCREMENT_IF_ODD = 'INCREMENT_IF_ODD'
 export function setCounter(counter) {
   return {
     type: SET_COUNTER,
@@ -22,13 +22,7 @@ export function decrement() {
 }
 
 export function incrementIfOdd() {
-  return (dispatch, getState) => {
-    const { counter } = getState();
-
-    if (counter % 2 === 0) {
-      return;
-    }
-
-    dispatch(increment());
-  };
+  return {
+    type: INCREMENT_IF_ODD
+  }
 }

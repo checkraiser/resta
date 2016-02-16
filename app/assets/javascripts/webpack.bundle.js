@@ -26497,7 +26497,7 @@
 	var INCREMENT_COUNTER = exports.INCREMENT_COUNTER = 'INCREMENT_COUNTER';
 	var DECREMENT_COUNTER = exports.DECREMENT_COUNTER = 'DECREMENT_COUNTER';
 	var SET_COUNTER = exports.SET_COUNTER = 'SET_COUNTER';
-
+	var INCREMENT_IF_ODD = exports.INCREMENT_IF_ODD = 'INCREMENT_IF_ODD';
 	function setCounter(counter) {
 	  return {
 	    type: SET_COUNTER,
@@ -26518,17 +26518,8 @@
 	}
 
 	function incrementIfOdd() {
-	  return function (dispatch, getState) {
-	    var _getState = getState();
-
-	    var counter = _getState.counter;
-
-
-	    if (counter % 2 === 0) {
-	      return;
-	    }
-
-	    dispatch(increment());
+	  return {
+	    type: INCREMENT_IF_ODD
 	  };
 	}
 
@@ -27894,6 +27885,8 @@
 	      return state + 1;
 	    case _counter.DECREMENT_COUNTER:
 	      return state - 1;
+	    case _counter.INCREMENT_IF_ODD:
+	      return state % 2 !== 0 ? state + 1 : state;
 	    case _counter.SET_COUNTER:
 	      return action.counter;
 	    default:
