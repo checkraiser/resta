@@ -1,6 +1,6 @@
 module.exports = {
   context: __dirname + '/javascripts',
-  entry: './webpack_application.js',
+  entry: ['babel-polyfill','./webpack_application.js'],
   watch: true,
   output: {
     filename: 'webpack.bundle.js',

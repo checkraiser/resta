@@ -10,7 +10,8 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(CounterActions, dispatch);
+  const incrementAsync = () => dispatch({type: 'INCREMENT_ASYNC'})
+  return Object.assign({}, bindActionCreators(CounterActions, dispatch), {incrementAsync: incrementAsync})
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);
