@@ -16,3 +16,4 @@
 !/log/.keep
 /tmp
 app/assets/node_modules/
+mobile/CounterAppMobile/node_modules/
